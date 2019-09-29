@@ -28,9 +28,8 @@
             var ssd = bin2ssd(bin)
             document.getElementById("bin2ssd_output").innerHTML=ssd
             // send ssd signals to function illuminate_segments()
-            document.getElementById("illuminate_input").innerHTML=ssd
+            //document.getElementById("illuminate_input").innerHTML=ssd
             illuminate(ssd)
-            document.getElementById("illuminate_output").innerHTML='done'
         }
         function dec2bin(decimal){
             // substitute a non-algorithmic solution
@@ -72,6 +71,30 @@
             return (output) // initial default just illuminate segment A
             
         }
+        function illuminate(signals){
+            document.getElementById("segments").innerHTML = signals
+            if (signals[0] == '1'){
+                document.getElementById("segmentA").innerHTML = 'ON'}
+            else {document.getElementById("segmentA").innerHTML = ''}
+            if (signals[1] == '1'){
+                document.getElementById("segmentB").innerHTML = 'ON'}
+            else {document.getElementById("segmentB").innerHTML = ''}
+            if (signals[2] == '1'){
+                document.getElementById("segmentC").innerHTML = 'ON'}
+            else {document.getElementById("segmentC").innerHTML = ''}
+            if (signals[3] == '1'){
+                document.getElementById("segmentD").innerHTML = 'ON'}
+            else {document.getElementById("segmentD").innerHTML = ''}
+            if (signals[4] == '1'){
+                document.getElementById("segmentE").innerHTML = 'ON'}
+            else {document.getElementById("segmentE").innerHTML = ''}
+            if (signals[5] == '1'){
+                document.getElementById("segmentF").innerHTML = 'ON'}
+            else {document.getElementById("segmentF").innerHTML = ''}
+            if (signals[6] == '1'){
+                document.getElementById("segmentG").innerHTML = 'ON'}
+            else {document.getElementById("segmentG").innerHTML = ''}
+        }
         </script>
     </head>
     <body>
@@ -96,7 +119,7 @@
                 <p id="bin2ssd_input"></p>
                 <p id="bin2ssd_output"></p></td>
                 <td class="blackbox"><h3>Illuminate Segments</h3>
-                <p id="illuminate_input"></p>
+                <p id="segments"></p>
                 <table>
                     <tr>
                         <td class = "notsevenSegmentTable">1</td>
